@@ -154,6 +154,12 @@ files:
         }
     }
   learner_created: false
-feedback_link: https://hyperskill.org/projects/66/stages/355/implement#comment
-status: Unchecked
+- name: src/search/Person.java
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/5497#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 13 Jun 2022 05:04:14 UTC
 record: -1

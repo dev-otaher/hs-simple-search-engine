@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SimpleSearchEngineTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-12T07:26:28" hostname="OT" time="0.11">
+<testsuite name="SimpleSearchEngineTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-13T05:04:14" hostname="OT" time="0.101">
   <properties/>
-  <testcase name="start" classname="SimpleSearchEngineTest" time="0.11"/>
+  <testcase name="start" classname="SimpleSearchEngineTest" time="0.101"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-> hello my name is alex
-> my
-2
+> 1
+> John
+
+> 1
+
+> this text will definitely be no match
+No match.
+
 ?[1;31m
 Start test 2?[0m
-> hello my name is alex
-> alex
-5
-?[1;31m
-Start test 3?[0m
-> what a beautiful place
-> what
-1
-?[1;31m
-Start test 4?[0m
-> hi
-> hi
-1
-?[1;31m
-Start test 5?[0m
-> hi
-> hello
-Not found
-?[1;31m
-Start test 6?[0m
-> twenty one pilots white stripes queen system of a down
-> hello
-Not found
-?[1;31m
-Start test 7?[0m
-> twenty one pilots white stripes queen system of a down
-> a
-9
-?[1;31m
-Start test 8?[0m
-> one two three
-> four
-Not found
+> 3
+> john smith smith@gmail.com
+> John lock john_lock@somecompany.com
+> help me iamaprogrammer@gmail.com
+
+> 4
+
+> john
+
+Found:
+john smith smith@gmail.com
+John lock john_lock@somecompany.com
+
+> Somecompany
+
+Found:
+John lock john_lock@somecompany.com
+
+> @
+
+Found:
+john smith smith@gmail.com
+John lock john_lock@somecompany.com
+help me iamaprogrammer@gmail.com
+
+> this text will definitely be no match
+No match.
+
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
