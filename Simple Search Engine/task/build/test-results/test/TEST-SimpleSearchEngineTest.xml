@@ -1,47 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SimpleSearchEngineTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-13T05:04:14" hostname="OT" time="0.101">
+<testsuite name="SimpleSearchEngineTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-13T22:59:58" hostname="OT" time="0.262">
   <properties/>
-  <testcase name="start" classname="SimpleSearchEngineTest" time="0.101"/>
+  <testcase name="start" classname="SimpleSearchEngineTest" time="0.262"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-> 1
-> John
+> 6
+> Dwight Joseph djo@gmail.com
+> Rene Webb webb@gmail.com
+> Katie Jacobs
+> Erick Harrington harrington@gmail.com
+> Myrtle Medina
+> Erick Burgess
 
-> 1
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 2
 
-> this text will definitely be no match
-No match.
+=== List of People ===
+Dwight Joseph djo@gmail.com
+Rene Webb webb@gmail.com
+Katie Jacobs
+Erick Harrington harrington@gmail.com
+Myrtle Medina
+Erick Burgess
 
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 0
+Bye!
 ?[1;31m
 Start test 2?[0m
+> 6
+> Dwight Joseph djo@gmail.com
+> Rene Webb webb@gmail.com
+> Katie Jacobs
+> Erick Harrington harrington@gmail.com
+> Myrtle Medina
+> Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 1
+> burgess
+Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 0
+Bye!
+?[1;31m
+Start test 3?[0m
+> 6
+> Dwight Joseph djo@gmail.com
+> Rene Webb webb@gmail.com
+> Katie Jacobs
+> Erick Harrington harrington@gmail.com
+> Myrtle Medina
+> Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 1
+> erick
+Erick Harrington harrington@gmail.com
+Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 0
+Bye!
+?[1;31m
+Start test 4?[0m
+> 6
+> Dwight Joseph djo@gmail.com
+> Rene Webb webb@gmail.com
+> Katie Jacobs
+> Erick Harrington harrington@gmail.com
+> Myrtle Medina
+> Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
 > 3
-> john smith smith@gmail.com
-> John lock john_lock@somecompany.com
-> help me iamaprogrammer@gmail.com
+Incorrect option! Try again.
 
-> 4
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 1
+> burgess
+Erick Burgess
 
-> john
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 2
 
-Found:
-john smith smith@gmail.com
-John lock john_lock@somecompany.com
+=== List of People ===
+Dwight Joseph djo@gmail.com
+Rene Webb webb@gmail.com
+Katie Jacobs
+Erick Harrington harrington@gmail.com
+Myrtle Medina
+Erick Burgess
 
-> Somecompany
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 2
 
-Found:
-John lock john_lock@somecompany.com
+=== List of People ===
+Dwight Joseph djo@gmail.com
+Rene Webb webb@gmail.com
+Katie Jacobs
+Erick Harrington harrington@gmail.com
+Myrtle Medina
+Erick Burgess
 
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 1
+> erick
+Erick Harrington harrington@gmail.com
+Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 0
+Bye!
+?[1;31m
+Start test 5?[0m
+> 6
+> Dwight Joseph djo@gmail.com
+> Rene Webb webb@gmail.com
+> Katie Jacobs
+> Erick Harrington harrington@gmail.com
+> Myrtle Medina
+> Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 2
+
+=== List of People ===
+Dwight Joseph djo@gmail.com
+Rene Webb webb@gmail.com
+Katie Jacobs
+Erick Harrington harrington@gmail.com
+Myrtle Medina
+Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 1
 > @
+Dwight Joseph djo@gmail.com
+Rene Webb webb@gmail.com
+Erick Harrington harrington@gmail.com
 
-Found:
-john smith smith@gmail.com
-John lock john_lock@somecompany.com
-help me iamaprogrammer@gmail.com
-
-> this text will definitely be no match
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 1
+> this text never find some match
 No match.
 
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 2
+
+=== List of People ===
+Dwight Joseph djo@gmail.com
+Rene Webb webb@gmail.com
+Katie Jacobs
+Erick Harrington harrington@gmail.com
+Myrtle Medina
+Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 0
+Bye!
+?[1;31m
+Start test 6?[0m
+> 6
+> Dwight Joseph djo@gmail.com
+> Rene Webb webb@gmail.com
+> Katie Jacobs
+> Erick Harrington harrington@gmail.com
+> Myrtle Medina
+> Erick Burgess
+
+=== Menu ===
+1. Search information.
+2. Print all data.
+0. Exit.
+> 0
+Bye!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

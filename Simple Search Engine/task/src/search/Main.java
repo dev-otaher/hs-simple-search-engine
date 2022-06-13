@@ -8,13 +8,12 @@ public class Main {
         Person[] people = new Person[number];
         for (int i = 0; i < number; i++) {
             String[] data = scanner.nextLine().split(" ");
-            Person person = new Person();
-            person.firstName = data[0];
+            Person person = new Person(data[0]);
             if (data.length > 1) {
-                person.lastName = data[1];
+                person.setLastName(data[1]);
             }
             if (data.length > 2) {
-                person.email = data[2];
+                person.setEmail(data[2]);
             }
             people[i] = person;
         }
@@ -44,7 +43,6 @@ public class Main {
         if (isArrayElementsNull(result)) {
             System.out.println("No match.");
         } else {
-            System.out.println("\nFound:");
             for (Person person : result) {
                 if (person != null) {
                     System.out.println(person.toString().trim());
@@ -53,18 +51,43 @@ public class Main {
         }
     }
 
+    public static void printAll(Person[] people) {
+        System.out.println("\n=== List of People ===");
+        for (Person person : people) {
+            System.out.println(person.toString().trim());
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Person[] people = parseData(scanner);
-        System.out.println();
-        int queries = Integer.parseInt(scanner.nextLine());
-        System.out.println();
-        for (int i = 0; i < queries; i++) {
-            String query = scanner.nextLine();
-            printResult(searchPeople(people, query));
-            System.out.println();
-        }
+        Menu menu = new Menu();
+        int choice;
+        do {
+            menu.print();
+            choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    String query = scanner.nextLine();
+                    printResult(searchPeople(people, query));
+                    break;
+                case 2:
+                    printAll(people);
+                    break;
+                case 0:
+                    System.out.println("Bye!");
+                    break;
+                default:
+                    System.out.println("Incorrect option! Try again.");
+                    break;
+            }
+        } while (choice != 0);
     }
 }
+
+
+
+
+
 
 
