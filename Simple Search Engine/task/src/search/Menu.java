@@ -11,7 +11,7 @@ public class Menu {
     }
 
     public void print() {
-        System.out.println("\n=== Menu ===");
+        System.out.println("=== Menu ===");
         for (MenuItem item : items) {
             System.out.println(item);
         }

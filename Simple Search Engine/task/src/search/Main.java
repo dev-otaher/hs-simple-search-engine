@@ -1,21 +1,43 @@
 package search;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
+    private static void insertPerson(Person[] people, int i, String[] data) {
+        Person person = new Person(data[0]);
+        if (data.length > 1) {
+            person.setLastName(data[1]);
+        }
+        if (data.length > 2) {
+            person.setEmail(data[2]);
+        }
+        people[i] = person;
+    }
+
     public static Person[] parseData(Scanner scanner) {
         int number = Integer.parseInt(scanner.nextLine());
         Person[] people = new Person[number];
         for (int i = 0; i < number; i++) {
             String[] data = scanner.nextLine().split(" ");
-            Person person = new Person(data[0]);
-            if (data.length > 1) {
-                person.setLastName(data[1]);
+            insertPerson(people, i, data);
+        }
+        return people;
+    }
+
+    public static Person[] parseData(String fileName) {
+        Person[] people = new Person[0];
+        try {
+            String[] input = new String(Files.readAllBytes(Paths.get(fileName))).split("\n");
+            people = new Person[input.length];
+            for (int i = 0; i < people.length; i++) {
+                String[] data = input[i].split(" ");
+                insertPerson(people, i, data);
             }
-            if (data.length > 2) {
-                person.setEmail(data[2]);
-            }
-            people[i] = person;
+        } catch (IOException e) {
+            System.out.println("No such file!");
         }
         return people;
     }
@@ -49,6 +71,7 @@ public class Main {
                 }
             }
         }
+        System.out.println();
     }
 
     public static void printAll(Person[] people) {
@@ -56,11 +79,13 @@ public class Main {
         for (Person person : people) {
             System.out.println(person.toString().trim());
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
+        String filename = args[1];
         Scanner scanner = new Scanner(System.in);
-        Person[] people = parseData(scanner);
+        Person[] people = parseData(filename);
         Menu menu = new Menu();
         int choice;
         do {
@@ -75,7 +100,7 @@ public class Main {
                     printAll(people);
                     break;
                 case 0:
-                    System.out.println("Bye!");
+                    System.out.println("\nBye!");
                     break;
                 default:
                     System.out.println("Incorrect option! Try again.");
@@ -84,10 +109,3 @@ public class Main {
         } while (choice != 0);
     }
 }
-
-
-
-
-
-
-

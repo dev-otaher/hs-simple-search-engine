@@ -12,62 +12,6 @@ files:
         }
     }
   learner_created: false
-- name: test/SearchEngineTests.java
-  visible: false
-  text: |
-    public class SearchEngineTests {
-        public static final String NAMES = "Kristofer Galley\n" +
-            "Fernando Marbury fernando_marbury@gmail.com\n" +
-            "Kristyn Nix nix-kris@gmail.com\n" +
-            "Regenia Enderle\n" +
-            "Malena Gray\n" +
-            "Colette Mattei\n" +
-            "Wendolyn Mcphillips\n" +
-            "Jim Gray\n" +
-            "Coreen Beckham\n" +
-            "Bob Yeh bobyeah@gmail.com\n" +
-            "Shannan Strope stropeshah@gmail.com\n" +
-            "Yer Fillion\n" +
-            "Margene Resendez marres@gmail.com\n" +
-            "Blossom Ambler\n" +
-            "Teri Ledet teri_ledet@gmail.com\n" +
-            "Dana Baron baron@gmail.com\n" +
-            "Abram Goldsberry\n" +
-            "Yer Leopold\n" +
-            "Stefania Trunzo\n" +
-            "Alexis Leopold\n" +
-            "Carlene Pompa\n" +
-            "Oliver Dacruz\n" +
-            "Jonie Richter\n" +
-            "Pasquale Gallien gallien@evilcorp.com\n" +
-            "Verdie Gentle\n" +
-            "Gerardo Strouth gallien@evilcorp.com\n" +
-            "Agripina Dones\n" +
-            "Latricia Niebuhr\n" +
-            "Malena Schommer\n" +
-            "Drema Leopold\n" +
-            "Heide Payeur\n" +
-            "Ranae Digiovanni\n" +
-            "Simona Pereira\n" +
-            "Nick Digiovanni\n" +
-            "Angelita Wigington gallien@evilcorp.com\n" +
-            "Elin Gray\n" +
-            "Dwain Trunzo\n" +
-            "Boris Beiler\n" +
-            "Remi Malek fsociefy@gmail.com\n" +
-            "Demetria Hostetler gallien@evilcorp.com\n" +
-            "Nydia Mcduffie\n" +
-            "Florencio Defibaugh\n" +
-            "Warner Giblin\n" +
-            "May Mans\n" +
-            "Shu Gray\n" +
-            "Kaycee Gray\n" +
-            "Victorina Froehlich victory@gmail.com\n" +
-            "Roseanne Gray\n" +
-            "Erica Radford hisam@gmail.com\n" +
-            "Elyse Pauling";
-    }
-  learner_created: false
 - name: test/SimpleSearchEngineTest.java
   visible: false
   text: |+
@@ -286,6 +230,175 @@ files:
     }
 
   learner_created: false
+- name: src/search/MenuItem.java
+  visible: true
+  text: |
+    package search;
+
+    public class MenuItem {
+        private int id;
+        private String title;
+
+        public MenuItem(int id, String title) {
+            this.id = id;
+            this.title = title;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%d. %s", id, title);
+        }
+    }
+  learner_created: true
+- name: src/search/Person.java
+  visible: true
+  text: |
+    package search;
+
+    public class Person {
+        String firstName;
+        String lastName;
+        String email;
+
+        public Person() {
+            this.firstName = "";
+            this.lastName = "";
+            this.email = "";
+        }
+
+        public Person(String firstName) {
+            this();
+            this.firstName = firstName;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s %s %s", firstName, lastName, email);
+        }
+    }
+  learner_created: true
+- name: src/search/Menu.java
+  visible: true
+  text: |
+    package search;
+
+    public class Menu {
+        private MenuItem[] items;
+
+        public Menu() {
+            items = new MenuItem[3];
+            items[0] = new MenuItem(1, "Search information.");
+            items[1] = new MenuItem(2, "Print all data.");
+            items[2] = new MenuItem(0, "Exit.");
+        }
+
+        public void print() {
+            System.out.println("\n=== Menu ===");
+            for (MenuItem item : items) {
+                System.out.println(item);
+            }
+        }
+    }
+  learner_created: true
+- name: test/SearchEngineTests.java
+  visible: false
+  text: |
+    public class SearchEngineTests {
+        public static final String NAMES = "Kristofer Galley\n" +
+            "Fernando Marbury fernando_marbury@gmail.com\n" +
+            "Kristyn Nix nix-kris@gmail.com\n" +
+            "Regenia Enderle\n" +
+            "Malena Gray\n" +
+            "Colette Mattei\n" +
+            "Wendolyn Mcphillips\n" +
+            "Jim Gray\n" +
+            "Coreen Beckham\n" +
+            "Bob Yeh bobyeah@gmail.com\n" +
+            "Shannan Strope stropeshah@gmail.com\n" +
+            "Yer Fillion\n" +
+            "Margene Resendez marres@gmail.com\n" +
+            "Blossom Ambler\n" +
+            "Teri Ledet teri_ledet@gmail.com\n" +
+            "Dana Baron baron@gmail.com\n" +
+            "Abram Goldsberry\n" +
+            "Yer Leopold\n" +
+            "Stefania Trunzo\n" +
+            "Alexis Leopold\n" +
+            "Carlene Pompa\n" +
+            "Oliver Dacruz\n" +
+            "Jonie Richter\n" +
+            "Pasquale Gallien gallien@evilcorp.com\n" +
+            "Verdie Gentle\n" +
+            "Gerardo Strouth gallien@evilcorp.com\n" +
+            "Agripina Dones\n" +
+            "Latricia Niebuhr\n" +
+            "Malena Schommer\n" +
+            "Drema Leopold\n" +
+            "Heide Payeur\n" +
+            "Ranae Digiovanni\n" +
+            "Simona Pereira\n" +
+            "Nick Digiovanni\n" +
+            "Angelita Wigington gallien@evilcorp.com\n" +
+            "Elin Gray\n" +
+            "Dwain Trunzo\n" +
+            "Boris Beiler\n" +
+            "Remi Malek fsociefy@gmail.com\n" +
+            "Demetria Hostetler gallien@evilcorp.com\n" +
+            "Nydia Mcduffie\n" +
+            "Florencio Defibaugh\n" +
+            "Warner Giblin\n" +
+            "May Mans\n" +
+            "Shu Gray\n" +
+            "Kaycee Gray\n" +
+            "Victorina Froehlich victory@gmail.com\n" +
+            "Roseanne Gray\n" +
+            "Erica Radford hisam@gmail.com\n" +
+            "Elyse Pauling";
+    }
+  learner_created: false
 feedback_link: https://hyperskill.org/learn/step/5499#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Tue, 14 Jun 2022 14:54:05 UTC
 record: -1
