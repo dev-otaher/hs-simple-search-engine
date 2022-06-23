@@ -46,6 +46,7 @@ public class Main {
         if (result.size() == 0) {
             System.out.println("No match.");
         } else {
+            System.out.printf("\n%d persons found:\n", result.size());
             for (Person person : result) {
                 System.out.println(person.toString().trim());
             }
@@ -72,6 +73,16 @@ public class Main {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
+                    System.out.println("\nSelect a matching strategy (ALL, ANY, NONE):");
+                    String strategy = scanner.nextLine();
+                    if (strategy.equalsIgnoreCase("all")) {
+                        engine.setSearchingMethod(new AllSearchingMethod());
+                    } else if (strategy.equalsIgnoreCase("any")) {
+                        engine.setSearchingMethod(new AnySearchingMethod());
+                    } else if (strategy.equalsIgnoreCase("none")) {
+                        engine.setSearchingMethod(new NoneSearchingMethod());
+                    }
+                    System.out.println("\nEnter query:");
                     String query = scanner.nextLine();
                     printResult(engine.search(query));
                     break;

@@ -322,6 +322,172 @@ files:
         }
     }
   learner_created: false
+- name: src/search/MenuItem.java
+  visible: true
+  text: |
+    package search;
+
+    public class MenuItem {
+        private int id;
+        private String title;
+
+        public MenuItem(int id, String title) {
+            this.id = id;
+            this.title = title;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%d. %s", id, title);
+        }
+    }
+  learner_created: true
+- name: src/search/Person.java
+  visible: true
+  text: |
+    package search;
+
+    public class Person {
+        String firstName;
+        String lastName;
+        String email;
+
+        public Person() {
+            this.firstName = "";
+            this.lastName = "";
+            this.email = "";
+        }
+
+        public Person(String firstName) {
+            this();
+            this.firstName = firstName;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s %s %s", firstName, lastName, email);
+        }
+    }
+  learner_created: true
+- name: src/search/Engine.java
+  visible: true
+  text: |
+    package search;
+
+    import java.util.*;
+
+    public class Engine {
+        private List<Person> people;
+        private Map<String, Set<Integer>> invertedIndex;
+
+        public Engine(List<Person> people) {
+            this.people = people;
+            this.invertedIndex = new LinkedHashMap<>();
+            createInvertedIndex();
+        }
+
+        public List<Person> getPeople() {
+            return people;
+        }
+
+        public List<Person> search(String query) {
+            List<Person> result = new ArrayList<>();
+            for (int index : invertedIndex.getOrDefault(query, new HashSet<>())) {
+                result.add(people.get(index));
+            }
+            return result;
+        }
+
+        private void createInvertedIndex() {
+            for (int i = 0; i < people.size(); i++) {
+                for (String prop : people.get(i).toString().split(" ")) {
+                    Set<Integer> currentIndexes = invertedIndex.getOrDefault(prop, new HashSet<>());
+                    currentIndexes.add(i);
+                    invertedIndex.put(prop, currentIndexes);
+                }
+            }
+        }
+    }
+  learner_created: true
+- name: src/search/Menu.java
+  visible: true
+  text: |
+    package search;
+
+    public class Menu {
+        private MenuItem[] items;
+
+        public Menu() {
+            items = new MenuItem[3];
+            items[0] = new MenuItem(1, "Search information.");
+            items[1] = new MenuItem(2, "Print all data.");
+            items[2] = new MenuItem(0, "Exit.");
+        }
+
+        public void print() {
+            System.out.println("=== Menu ===");
+            for (MenuItem item : items) {
+                System.out.println(item);
+            }
+        }
+    }
+  learner_created: true
+- name: src/search/SearchingMethod.java
+  visible: true
+  learner_created: true
+- name: src/search/AllSearchingMethod.java
+  visible: true
+  learner_created: true
+- name: src/search/AnySearchingMethod.java
+  visible: true
+  learner_created: true
+- name: src/search/NoneSearchingMethod.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5501#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Thu, 23 Jun 2022 08:09:09 UTC
 record: -1
