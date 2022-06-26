@@ -14,6 +14,10 @@
       <module name="Simple_Search_Engine.Topics-Abstract_class-Shape_hierarchy.main" target="11" />
       <module name="Simple_Search_Engine.Topics-Abstract_class-Theory.main" target="11" />
       <module name="Simple_Search_Engine.Topics-Abstract_class-Users_and_WebSites.main" target="11" />
+      <module name="Simple_Search_Engine.Topics-Default_methods-Add_new_default_method.main" target="11" />
+      <module name="Simple_Search_Engine.Topics-Default_methods-Resolve_a_diamond_problem.main" target="11" />
+      <module name="Simple_Search_Engine.Topics-Default_methods-Theory.main" target="11" />
+      <module name="Simple_Search_Engine.Topics-Default_methods-What_is_the_reason_for_default_methods.main" target="11" />
       <module name="Simple_Search_Engine.Topics-Template_method-A_disadvantage.main" target="11" />
       <module name="Simple_Search_Engine.Topics-Template_method-Build_a_house.main" target="11" />
       <module name="Simple_Search_Engine.Topics-Template_method-New_customer.main" target="11" />
